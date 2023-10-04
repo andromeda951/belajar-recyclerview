@@ -1,5 +1,6 @@
 package com.andromeda.belajarrecyclerview
 
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,8 +12,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 //        textAdapter()
-        numberAdapter()
+//        numberAdapter()
+        imageAdapter()
 
+
+    }
+
+    private fun imageAdapter() {
+        val images = listOf<Int>(
+            R.drawable.photo_1,
+            R.drawable.photo_2,
+            R.drawable.photo_3,
+            R.drawable.photo_4,
+        )
+
+        val imageAdaper = ImageAdapter(images)
+        findViewById<RecyclerView>(R.id.recycler_view).adapter = imageAdaper
     }
 
     private fun textAdapter() {
