@@ -26,7 +26,19 @@ class MainActivity : AppCompatActivity() {
             Log.e("MainActivity", it)
         }
 
-        val mainAdaper = MainAdapter(names)
+        val numbers = listOf<Int>(
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+        )
+
+        val mainAdaper = MainAdapter(numbers)
         findViewById<RecyclerView>(R.id.recycler_view).adapter = mainAdaper
     }
 }
