@@ -2,6 +2,7 @@ package com.andromeda.belajarrecyclerview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +20,11 @@ class MainActivity : AppCompatActivity() {
             "Ani",
             "Toni",
         )
+
+        Log.e("MainActivity", "size: ${names.size}")
+        names.forEach {
+            Log.e("MainActivity", it)
+        }
 
         val mainAdaper = MainAdapter(names)
         findViewById<RecyclerView>(R.id.recycler_view).adapter = mainAdaper
