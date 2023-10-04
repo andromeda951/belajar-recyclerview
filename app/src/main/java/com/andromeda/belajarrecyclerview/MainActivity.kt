@@ -10,6 +10,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+//        textAdapter()
+        numberAdapter()
+
+    }
+
+    private fun textAdapter() {
         val names = listOf<String>(
             "Andromeda",
             "Joko",
@@ -26,6 +32,11 @@ class MainActivity : AppCompatActivity() {
             Log.e("MainActivity", it)
         }
 
+        val textAdaper = TextAdapter(names)
+        findViewById<RecyclerView>(R.id.recycler_view).adapter = textAdaper
+    }
+
+    private fun numberAdapter() {
         val numbers = listOf<Int>(
             1,
             2,
@@ -38,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             9,
         )
 
-        val mainAdaper = MainAdapter(numbers)
-        findViewById<RecyclerView>(R.id.recycler_view).adapter = mainAdaper
+        val numberAdaper = NumberAdapter(numbers)
+        findViewById<RecyclerView>(R.id.recycler_view).adapter = numberAdaper
     }
 }

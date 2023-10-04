@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MainAdapter(private val numbers: List<Int>) :
-    RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+class TextAdapter(private val listName: List<String>) :
+    RecyclerView.Adapter<TextAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val name = view.findViewById<TextView>(R.id.text_name)
@@ -20,10 +20,10 @@ class MainAdapter(private val numbers: List<Int>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.name.text = numbers[position].toString()
+        holder.name.text = listName[position]
     }
 
     override fun getItemCount(): Int {
-        return numbers.size
+        return listName.size
     }
 }
