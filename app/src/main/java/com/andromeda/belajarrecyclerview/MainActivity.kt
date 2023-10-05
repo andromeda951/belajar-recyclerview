@@ -3,6 +3,7 @@ package com.andromeda.belajarrecyclerview
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -30,7 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         val imageAdapter = ImageAdapter(images)
         findViewById<RecyclerView>(R.id.recycler_view).adapter = imageAdapter
-        findViewById<RecyclerView>(R.id.recycler_view).layoutManager = LinearLayoutManager(this)
+//        findViewById<RecyclerView>(R.id.recycler_view).layoutManager = LinearLayoutManager(this)
+
+//        Try this and comment in activity_main.xml
+//        findViewById<RecyclerView>(R.id.recycler_view).layoutManager = GridLayoutManager(this, 2)
 
 //        Assign recycler_view to an object
 //        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
