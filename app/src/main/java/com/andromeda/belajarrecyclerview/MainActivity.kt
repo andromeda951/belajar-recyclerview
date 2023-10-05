@@ -17,8 +17,27 @@ class MainActivity : AppCompatActivity() {
 //        numberAdapter()
 //        imageAdapter()
 //        textWithEventAdapter()
-        textWithEventAdapter2()
+//        textWithEventAdapter2()
+        photoAdapter()
 
+
+    }
+
+    private fun photoAdapter() {
+        val photo = listOf<PhotoModel>(
+            PhotoModel(1, "Photo 1", R.drawable.photo_1),
+            PhotoModel(2, "Photo 2", R.drawable.photo_2),
+            PhotoModel(3, "Photo 3", R.drawable.photo_3),
+            PhotoModel(4, "Photo 4", R.drawable.photo_4),
+            PhotoModel(5, "Photo 5", R.drawable.photo_5),
+            PhotoModel(6, "Photo 6", R.drawable.photo_6),
+        )
+
+        val photoAdapter = PhotoAdapter(photo)
+        findViewById<RecyclerView>(R.id.recycler_view).apply {
+            adapter = photoAdapter
+            layoutManager = LinearLayoutManager(this@MainActivity)
+        }
 
     }
 
