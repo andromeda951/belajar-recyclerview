@@ -33,7 +33,12 @@ class MainActivity : AppCompatActivity() {
             PhotoModel(6, "Photo 6", R.drawable.photo_6),
         )
 
-        val photoAdapter = PhotoAdapter(photo)
+        val photoAdapter = PhotoAdapter(photo, object : PhotoAdapter.OnAdapterListener{
+            override fun onClick(photo: PhotoModel) {
+                Toast.makeText(this@MainActivity, photo.id.toString(), Toast.LENGTH_SHORT).show()
+            }
+        })
+
         findViewById<RecyclerView>(R.id.recycler_view).apply {
             adapter = photoAdapter
             layoutManager = LinearLayoutManager(this@MainActivity)

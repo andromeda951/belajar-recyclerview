@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PhotoAdapter(private val listPhoto: List<PhotoModel>) :
+class PhotoAdapter(private val listPhoto: List<PhotoModel>, private val listener: OnAdapterListener) :
     RecyclerView.Adapter<PhotoAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -24,9 +24,16 @@ class PhotoAdapter(private val listPhoto: List<PhotoModel>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.imageView.setImageResource(listPhoto[position].image)
         holder.textView.text = listPhoto[position].name
+        holder.itemView.setOnClickListener {
+            listener.onClick(listPhoto[position])
+        }
     }
 
     override fun getItemCount(): Int {
         return listPhoto.size
+    }
+
+    interface OnAdapterListener {
+        fun onClick(photo: PhotoModel)
     }
 }
