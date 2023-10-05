@@ -1,9 +1,9 @@
 package com.andromeda.belajarrecyclerview
 
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
@@ -28,8 +28,21 @@ class MainActivity : AppCompatActivity() {
             R.drawable.photo_6,
         )
 
-        val imageAdaper = ImageAdapter(images)
-        findViewById<RecyclerView>(R.id.recycler_view).adapter = imageAdaper
+        val imageAdapter = ImageAdapter(images)
+        findViewById<RecyclerView>(R.id.recycler_view).adapter = imageAdapter
+        findViewById<RecyclerView>(R.id.recycler_view).layoutManager = LinearLayoutManager(this)
+
+//        Assign recycler_view to an object
+//        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+//        recyclerView.adapter = imageAdapter
+//        recyclerView.layoutManager = LinearLayoutManager(this)
+
+//        Using apply
+//        findViewById<RecyclerView>(R.id.recycler_view).apply {
+//            adapter = imageAdapter
+//            layoutManager = LinearLayoutManager(this@MainActivity)
+//        }
+
     }
 
     private fun textAdapter() {
