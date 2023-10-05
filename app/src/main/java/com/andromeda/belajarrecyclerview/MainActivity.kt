@@ -14,9 +14,27 @@ class MainActivity : AppCompatActivity() {
 
 //        textAdapter()
 //        numberAdapter()
-        imageAdapter()
+//        imageAdapter()
+        textWithEventAdapter()
 
 
+    }
+
+    private fun textWithEventAdapter() {
+        val names = listOf<String>(
+            "Andromeda",
+            "Joko",
+            "Budi",
+            "Andi",
+            "Adit",
+            "Tono",
+            "Ani",
+            "Toni",
+        )
+
+        val textAdaper = TextWithEventAdapter(names, this)
+        findViewById<RecyclerView>(R.id.recycler_view).adapter = textAdaper
+        findViewById<RecyclerView>(R.id.recycler_view).layoutManager = LinearLayoutManager(this)
     }
 
     private fun imageAdapter() {
