@@ -3,6 +3,7 @@ package com.andromeda.belajarrecyclerview
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,10 +16,34 @@ class MainActivity : AppCompatActivity() {
 //        textAdapter()
 //        numberAdapter()
 //        imageAdapter()
-        textWithEventAdapter()
+//        textWithEventAdapter()
+        textWithEventAdapter2()
 
 
     }
+
+    private fun textWithEventAdapter2() {
+        val names = listOf<String>(
+            "Andromeda",
+            "Joko",
+            "Budi",
+            "Andi",
+            "Adit",
+            "Tono",
+            "Ani",
+            "Toni",
+        )
+
+        val textAdaper = TextWithEventAdapter2(names, object: TextWithEventAdapter2.OnAdapterListener{
+            override fun onClick(name: String) {
+                Toast.makeText(this@MainActivity, name, Toast.LENGTH_SHORT).show()
+            }
+
+        })
+        findViewById<RecyclerView>(R.id.recycler_view).adapter = textAdaper
+        findViewById<RecyclerView>(R.id.recycler_view).layoutManager = LinearLayoutManager(this)
+    }
+
 
     private fun textWithEventAdapter() {
         val names = listOf<String>(
