@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
             R.drawable.photo_2,
             R.drawable.photo_3,
             R.drawable.photo_4,
+            R.drawable.photo_5,
+            R.drawable.photo_6,
         )
 
         val imageAdaper = ImageAdapter(images)
